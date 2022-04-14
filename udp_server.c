@@ -49,7 +49,7 @@ void str_ser(int sockfd)
     {
         if ((n = recvfrom(sockfd, &packet, sizeof(packet), 0, (struct sockaddr *)&cliaddr, &cliaddrlen)) == -1)
         {
-            printf("Error when receiving\n");
+            printf("%s\n", "Error: Couldn't receive");
             exit(1);
         }
       
