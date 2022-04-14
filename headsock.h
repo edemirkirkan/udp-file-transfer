@@ -14,8 +14,8 @@
 #include <time.h>
 
 #define MYUDP_PORT 5350
-#define DATASIZE 2000
-#define BATCHSIZE 4
+#define DATASIZE 1024
+#define BATCHSIZE 5
 #define PACKETSIZE DATASIZE * BATCHSIZE
 #define BUFSIZE 60000
 #define TIMEOUTSEC 1
