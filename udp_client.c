@@ -82,7 +82,8 @@ float str_cli(FILE *file, int sockfd, long *bytecount, struct sockaddr *cliaddr,
     {
         if (ready)
         {
-            packet.len = (filesize - sentsofar + 1) <= PACKETSIZE ? filesize - sentsofar + 1 : PACKETSIZE; // last data unit
+            // if remaning last packet is smaller than actual size, set its size
+            packet.len = (filesize - sentsofar + 1) <= PACKETSIZE ? filesize - sentsofar + 1 : PACKETSIZE; 
             packet.num = flag;
             memcpy(packet.data, (buffer + sentsofar), packet.len);
 
